@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="blog">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Blog</title>
+    
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon.ico">
+    <link href="https://getbootstrap.com/docs/4.6/examples/album/album.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+<header>
+    
+      <section class=" text-center">
+        <div class="container">
+          <h1>Blog</h1>
+          
+        </div>
+      </section>
+    
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="#"><strong>Home</strong></a>
+      <a class="p-2 link-secondary" href="#">Loja</a>
+      <a class="p-2 link-secondary" href="#">Tecnologia</a>
+      <a class="p-2 link-secondary" href="#">Design</a>
+      <a class="p-2 link-secondary" href="#">Cultura</a>
+      <a class="p-2 link-secondary" href="#">Sobre</a>
+      <a class="p-2 link-secondary" href="#">Ajuda</a>
+      <strong>
+    </nav>
+  </div>
+</div>
+
+</header>
+
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+     <div class="row" ng-controller="Rest">
+        <div class="col-md-4" ng-repeat="publicacao in publicacoes">
+          <div class="card mb-4 shadow-sm">
+            <img ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}" >
+            <div class="card-body">
+              <p class="card-text">{{ publicacao.title }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">{{ publicacao.description }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<footer class="blog-footer">
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Consumo de API no Blog</h5>
+        <p class="card-text">Quisque pharetra, lorem a facilisis varius, ex est fringilla tellus</p>
+        <p class="card-text"><small class="text-muted">Atualizado há 3 minutos</small></p>
+      </div>    
+    </div>
+</footer> 
+    <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
